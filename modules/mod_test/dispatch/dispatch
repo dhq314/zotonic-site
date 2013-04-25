@@ -1,0 +1,5 @@
+%% -*- mode: erlang -*-
+%% mod_test dispatch rules
+[
+	{test, ["test"], controller_template, [ {template, "test.tpl"} ]}
+]. 

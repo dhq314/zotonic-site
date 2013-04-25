@@ -1,0 +1,46 @@
+%% -*- mode: erlang -*-
+%% Dispatch rules for mod_zotonic.
+[
+ {home,         [],                         controller_page,      [ {template, "home.tpl"}, {id, page_home} ]},
+ {home, [], controller_template, [ {template, "home.tpl"} ]},
+ 
+ 
+ {article,      ["article", id, slug],      controller_page,      [ {template, "article.tpl"}, {cat, article} ]},
+ {keyword,      ["by_keyword", id, slug],   controller_page,      [ {template, "by_keyword.tpl"} ]},
+ 
+ {page_contact, ["contact"],                controller_page,      [ {template, "contact.tpl"}, {id, page_contact} ]},
+ {page_erlshell, ["erlshell"],             	controller_page,      [ {template, "erlshell.tpl"}, {id, page_erlshell} ]},
+ 
+ 
+ {archives_y,   ["archives", year],         controller_template,  [ {template, "archives.tpl"}, {cat, article} ]},
+ {archives_m,   ["archives", year, month],  controller_template,  [ {template, "archives.tpl"}, {cat, article} ]},
+ 
+ {favicon, ["favicon.ico"], controller_file_readonly, [ {path, "images/favicon.ico"}, {root,[lib]}, {use_cache, false}, {content_disposition, inline} ]},
+    
+ {robots_txt, ["robots.txt"], controller_file_readonly, [ {path, "misc/robots.txt"}, {root,[lib]}, {use_cache, false}, {content_disposition, inline} ]},
+ 
+ 
+ %% Normal page to show a resource.
+ {page, ["page", id],       controller_page, [ {template, {cat, "page.tpl"}} ]},
+ {page, ["page", id, slug], controller_page, [ {template, {cat, "page.tpl"}} ]},
+ 
+ %% Pages when part of a menu
+ {page, ["page", id, "in-menu", in_menu],       controller_page, [ {template, {cat, "page.tpl"}} ]},
+ {page, ["page", id, "in-menu", in_menu, slug], controller_page, [ {template, {cat, "page.tpl"}} ]},
+ 
+ %% Pages when part of a collection
+ {page, ["page", id, "in-collection", in_collection],       controller_page, [ {template, {cat, "page.tpl"}} ]},
+ {page, ["page", id, "in-collection", in_collection, slug], controller_page, [ {template, {cat, "page.tpl"}} ]},
+ 
+ %% Show the map of an item
+ {map, ["map", id], controller_page, [ {template, {cat, "map.tpl"}} ]},
+ 
+ %% Redirect controller for resource of type 'website'
+ {website, ["redirect", id, slug], controller_website_redirect, []},
+ 
+ %% Simple search page
+ {search, ["search"], controller_template, [ {template, "search.tpl"} ]}
+ 
+        
+].
+
