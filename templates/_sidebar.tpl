@@ -1,7 +1,7 @@
 {# Cache the sidebar, depending on the stuff in the 'article' category #}
 {% cache 3600 _sidebar cat='article' %}
 
-	<form action="http://{{ m.site.hostname }}/search" id="cse-search-box">
+	<form action="http://{{ m.config.site.hostalias.value }}/search" id="cse-search-box">
 	  	<div id="dhq_search">
 	    	<input type="hidden" name="cx" value="003735940401219303672:4tswkohegxi" />
 	    	<input type="hidden" name="cof" value="FORID:10" />
@@ -33,7 +33,7 @@
 	
 	<h2>{_ 近期文章 _}</h2>
 	<ul class="article_list clearfix">
-		{% with m.site.hostname|default:"localhost" as hostname %}
+		{% with m.config.site.hostalias.value|default:"localhost" as hostname %}
 		{% for id in m.search[{query cat="article" is_published='true' sort='-rsc.publication_start' pagelen=10}] %}
 			{% if not m.rsc[id].seo_noindex %}
 				{% with m.rsc[id].page_url as page_url %}

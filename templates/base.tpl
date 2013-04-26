@@ -75,7 +75,7 @@
 				<p class="footer-blog-title">
 					由 <a href="http://zotonic.com">Zotonic</a> 强力驱动
 					&nbsp;|&nbsp;
-					<a href="http://{{ m.config.site.hostname.value }}/sitemap.html">站点地图</a>
+					<a href="http://{{ m.config.site.hostalias.value }}/sitemap.html">站点地图</a>
 				</p>
 			</div>
 		</footer>
@@ -103,8 +103,5 @@
 
     {% all include "_html_body.tpl" %}
 
-<div id="cnzz" style="display: none;">
-	<a title="每日建筑 -- 为每一个爱建筑的人" href="http://www.dailybuilding.com/">每日建筑</a>
-</div>    
 </body>
 </html>
