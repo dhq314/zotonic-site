@@ -28,7 +28,7 @@ li {
 </head>
 <body>
 
-{% with m.site.hostname|default:"localhost" as hostname %}
+{% with m.config.site.hostalias.value|default:"localhost" as hostname %}
 
 <h2 style="text-align: center; margin-top: 20px">{{ m.config.site.title.value }}'s SiteMap </h2>
 <div id="nav">

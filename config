@@ -4,20 +4,18 @@
  {enabled, true},
 
  %% Hostname on which this site runs
- {hostname, "site:8000"},
+ {hostname, "example.com"},
 
  %% Aliases which should redirect to the primary hostname
  %%{hostalias, "www.example.com"},
  %%{hostalias, "example.com"},
 
  %% PostgreSQL database connection
- {dbhost, "127.0.0.1"},
- {
-   dbport, 5432
- },
- {dbuser, "zotonic"},
- {dbpassword, "zotonic"},
- {dbdatabase, "zotonic"},
+ {dbhost, "dbhost"},
+ {dbport, 5432},
+ {dbuser, "dbuser"},
+ {dbpassword, "dbpassword"},
+ {dbdatabase, "dbdatabase"},
  {dbschema, "public"},
 
  %% Depcache settings, maximum size in mbs
