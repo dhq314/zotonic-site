@@ -225,7 +225,6 @@ header {
 #content a:hover {
 	color: #00A9DA;
 	text-decoration: underline;
-    border-bottom-width: 0;
 }
 
 /* Footer - see footer navigation styles in the zp-menu.css
@@ -599,4 +598,9 @@ strong {
     font-weight: bold;
     line-height: 50px;
     margin: 30px 0;
+}
+
+.pagination ul li {
+    float: left;
+    margin: 0 !important;
 }
